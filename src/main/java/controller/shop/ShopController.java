@@ -105,7 +105,7 @@ public class ShopController {
 				saveFile = new File(savePath, file_name);
 			}
 		    try {
-		        photo.transferTo(saveFile); // 업로드 파일에 saveFile이라는 이름 입힘
+		        photo.transferTo(saveFile); // 업로드 파일에 saveFile이라는 이름 입힘 
 		    } catch (IOException e) {
 		        e.printStackTrace();
 		        return null;
