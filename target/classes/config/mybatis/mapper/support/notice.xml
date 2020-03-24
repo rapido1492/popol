@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+
+	<insert id="notice_insert" parameterType="vo.support.noticeVO">
+		insert into notice
+		values(
+		seq_notice_idx.nextVal,
+		#{m_idx},
+		0,
+		#{notice_category},
+		#{notice_title},
+		#{notice_content},
+		sysdate
+		)
+	</insert>
+
+	<select id="noticeCnt" resultType="int">
+		select count(NOTICE_IDX) from
+		notice
+	</select>
+
+	<!-- <parameterMap type="map" id="notice_list_set"> <parameter property="startList"/> 
+		<parameter property="endList"/> </parameterMap> <select id="notice_list" 
+		parameterMap="notice_list_set" resultType="vo.support.noticeVO"> select * 
+		from notice where notice_idx between ? and ? order by notice_idx desc </select> -->
+
+	<select id="notice_list" parameterType="java.util.Map"
+		resultType="vo.support.noticeVO">
+		select * from notice
+		where notice_idx between #{startList} and #{endList}
+		order by notice_idx desc
+	</select>
+
+	<select id="notice_content" parameterType="int"
+		resultMap="notice_map">
+		select notice_idx, notice_view, notice_category,
+		notice_title, notice_content,notice_date, m_nick
+		from member, notice
+		where notice.m_idx =
+		member.m_idx and notice_idx = #{notice_idx}
+	</select>
+		<resultMap type="map" id="notice_map">
+			<result column="notice_idx" property="notice_idx" />
+			<result column="notice_view" property="notice_view" />
+			<result column="notice_title" property="notice_title" />
+			<result column="notice_content" property="notice_content" />
+			<result column="notice_date" property="notice_date" />
+			<result column="m_nick" property="m_nick" />
+		</resultMap>
+
+<!-- 	<select id="notice_search" parameterType="java.util.Map"
+		resultType="vo.support.noticeVO">
+		select * from notice
+		where #{SearchColumm} like
+		'%'||#{SearchValue}||'%'
+	</select> -->
+	
+	<select id="notice_search_title" parameterType="java.lang.String"
+		resultType="vo.support.noticeVO">
+		SELECT * FROM notice
+		WHERE notice_title LIKE '%'||#{SearchValue}||'%'
+	</select>
+
+	<select id="notice_search_content" parameterType="java.lang.String"
+		resultType="vo.support.noticeVO">
+		SELECT * FROM notice
+		WHERE notice_content LIKE '%'||#{SearchValue}||'%'
+	</select>
+
+	<select id="notice_search_all" parameterType="java.lang.String"
+		resultType="vo.support.noticeVO">
+		SELECT * FROM notice
+		WHERE notice_title LIKE '%'||#{SearchValue}||'%'
+		OR notice_content LIKE '%'||#{SearchValue}||'%'
+	</select>
+	
+	<update id="notice_view" parameterType="int">
+		update notice set notice_view= notice_view + 1
+		where notice_idx=#{notice_idx}
+	</update>
+
+</mapper>

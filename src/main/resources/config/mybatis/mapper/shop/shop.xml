@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper는 나중에 쿼리문을 통해 자동으로 객체를 생성해주는 참조파일 -->
+<mapper namespace="shop">
+	<select id="product_list" resultType="vo.shop.ShopVO">
+		select * from product
+	</select>
+	
+	<insert id="product_insert" parameterType="vo.shop.ShopVO">
+		insert into product values(
+			seq_product_idx.nextVal,
+				#{pro_name},
+				#{p_content},
+				#{pro_price},
+				#{pro_category},
+				#{pro_publisher_name},
+				#{file_name},
+				sysdate,
+				#{language},
+				#{pro_youtube1},
+				#{pro_youtube2},
+				#{pro_youtube3},
+				#{developer},
+				#{platform}	
+			)
+	</insert>
+	
+	<select id="publish_list" resultType="vo.shop.PublishVO">
+		select * from publisher
+	</select>
+	
+	<select id="product_one" parameterType="int" resultType="vo.shop.ShopVO">
+		select * from product where product_idx=#{product_idx}
+	</select>
+	
+	<select id="user_one" resultType="vo.shop.UserVO">
+		select * from user_cash
+	</select>
+	
+	<select id="cart_one" resultType="vo.shop.CartVO">
+		select * from product where product_idx=#{product_idx}
+	</select>
+	
+	<insert id="cart_insert" parameterType="vo.shop.CartVO">
+		insert into cart values(
+			seq_cart_idx.nextVal,
+			#{product_idx},
+			#{pro_name},
+			#{pro_price},
+			#{file_name},
+			#{u_idx}
+		)
+	</insert>
+	
+	<select id="cart_list" parameterType="int" resultType="vo.shop.CartVO">
+		select * from cart where u_idx=#{u_idx}
+	</select>
+	
+	<select id="cart_buy" parameterType="int" resultType="vo.shop.CartVO">
+		select * from cart where c_idx=#{c_idx}
+	</select>
+	
+	<delete id="cart_del" parameterType="int">
+		delete from cart where c_idx=#{c_idx}
+	</delete>
+	
+	<select id="search_list" parameterType="java.lang.String" resultType="vo.shop.ShopVO">
+		select * from product WHERE PRO_NAME LIKE '%'||#{PRO_NAME}||'%'
+	</select>
+	
+	<select id="">
+		SELECT * FROM product WHERE (pro_category LIKE '%'||#{pro_category}||'%') and
+		(platform LIKE '%'||#{platform}||'%) and (publisher LIKE '%'||#{publisher}||'%') and (language LIKE '%'||#{language}||'%')
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

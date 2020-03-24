@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="faq">
+
+	<select id="categoryallselect" resultType="vo.support.faqVO">
+		select * from faq
+	</select>
+
+	<select id="categoryselect" parameterType="int"
+		resultType="vo.support.faqVO">
+		select * from faq where FAQ_CATEGORY=#{item_cd}
+	</select>
+
+	<insert id="faqinput" parameterType="vo.support.faqVO">
+		insert into faq values(
+		seq_faq_idx.nextVal,
+		#{faq_title},
+		#{faq_content},
+		#{faq_category}
+		)
+	</insert>
+
+</mapper>
