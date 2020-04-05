@@ -188,6 +188,7 @@ public class ShopController {
 		model.addAttribute("total", total);
 		return common.Common.VIEW_PATH + "cartList.jsp";
 	}
+	
 	//상품 구매
 	@RequestMapping("/cart_buy.do")
 	public String cart_buy(HttpServletRequest req/* , int user_idx */, Model model) {
@@ -199,6 +200,7 @@ public class ShopController {
 		int[] check = new int[chk.length];
 		int price = 0;
 		int user_cash = uvo.getUser_cash();
+		int cash_res = 0;
 
 		for(int i = 0; i< chk.length; i++) {
 			CartVO cvo = new CartVO();
@@ -206,14 +208,14 @@ public class ShopController {
 			cvo = shopdao.cart_buy(check[i]); 
 			price += cvo.getPro_price();
 			if(user_cash > price) {
-				int cash_res = (uvo.getUser_cash() - price);
+				cash_res = (uvo.getUser_cash() - price);
 				int res = shopdao.cart_del(check[i]);
 			}
 			else {
 				System.out.println("캐시부족");
 			}
 		}
-		
+		model.addAttribute("cash_res", cash_res);
 		return "redirect:product_cartList.do";
 	}
 	

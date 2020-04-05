@@ -130,14 +130,14 @@
 
 					<div class="head-right col-sm-3" style="padding-top: 10px;">
 						<div class="head-cart">
-							<a href="/order/v2/cart.html" class="btn btn-cart" type="button"
+							<a href="product_cartList.do" class="btn btn-cart" type="button"
 								id="head-cart-dropdown" style="color: #ffffff"> <i
 								class="fa fa-shopping-cart"></i>
 							</a>
 						</div>
 
 						<div class="head-login">
-							<a class="btn btn-default btn-sm" href="/member/logout.html">
+							<a class="btn btn-default btn-sm" href="logout.do">
 								<i class="fa fa-unlock"></i> 로그아웃
 							</a> <a class="btn btn-default btn-sm"
 								href="/mypage/mypage_main.html"><i class="fa fa-user"></i>
@@ -173,13 +173,16 @@
 												<div class="mega-inner">
 													<ul class="mega-nav level1">
 														<li itemprop="name" data-id="202" data-level="1"><a
-															itemprop="url" class="" href="/customer/notice.html"
-															data-target="#">공지사항 </a></li>
+															itemprop="url" class="" href="notice_list.do"
+															data-target="#">공지사항 </a>
+														</li>
 														<li itemprop="name" data-id="204" data-level="1"><a
-															itemprop="url" class="" href="/customer/faq.html"
-															data-target="#">자주묻는질문 </a></li>
+															itemprop="url" class="" href="faq.do"
+															data-target="#">자주묻는질문 </a>
+														</li>
 														<li data-id="205"><a class=""
-															href="/customer/qna.html" data-target="#">문의하기 </a></li>
+															href="qna.do" data-target="#">문의하기 </a>
+														</li>
 													</ul>
 												</div>
 											</div>
@@ -208,6 +211,22 @@
 				</div>
 			</div>
 		</nav>
+	<div id="Kunena" class="layout container-fluid">
+		<div id="ktop">
+			<div id="ktopmenu">
+				<ul class="menu">
+					<li class="item141"><a href="/mypage/mypage_pwd.html" ><span>정보수정</span></a></li>
+					<li class="item142"><a href="/mypage/v2/mypage_order.html" ><span>주문내역</span></a></li>
+					<li class="item143"><a href="/mypage/mypage_qna.html" ><span>문의내역</span></a></li>
+					<li class="item144"><a href="/mypage/mypage_emoney.html" ><span>적립금</span></a></li>
+					<li class="item148"><a href="/mypage/mypage_cash.html" ><span>캐시</span></a></li>
+					<li class="item146"><a href="/mypage/member_leave.html" ><span>회원탈퇴</span></a></li>
+					<li class="item149"><a href="/order/v3/cart.html" ><span>장바구니</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+		
 	<div class="container">
         <table class="table table-bordered table-condensed" id="user-table">
 		<thead class="thead-dark">

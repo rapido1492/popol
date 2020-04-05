@@ -166,7 +166,7 @@ div.product {
 
 					<div class="head-right col-sm-3" style="padding-top: 10px;">
 						<div class="head-cart">
-							<a href="/order/v2/cart.html" class="btn btn-cart" type="button"
+							<a href="product_cartList.do" class="btn btn-cart" type="button"
 								id="head-cart-dropdown" style="color: #ffffff"> <i
 								class="fa fa-shopping-cart"></i>
 							</a>
@@ -210,21 +210,23 @@ div.product {
 												<div class="mega-inner">
 													<ul class="mega-nav level1">
 														<li itemprop="name" data-id="202" data-level="1"><a
-															itemprop="url" class="" href="/customer/notice.html"
+															itemprop="url" class="" href="notice_list.do"
 															data-target="#">공지사항 </a></li>
 														<li itemprop="name" data-id="204" data-level="1"><a
 															itemprop="url" class="" href="faq.do"
 															data-target="#">자주묻는질문 </a></li>
 														<li data-id="205"><a class=""
-															href="" data-target="#">문의하기 </a></li>
+															href="qna.do" data-target="#">문의하기 </a></li>
 													</ul>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div></li>
+								</div>
+							</li>
 							<li itemprop="name" class="mega" data-id="301" data-level="1"><a
-								itemprop="url" href="/event/event.html">이벤트</a></li>
+								itemprop="url" href="/event/event.html">이벤트</a>
+							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right"
 							itemtype="http://schema.org/Organization" itemscope="">
