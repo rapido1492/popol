@@ -162,7 +162,7 @@
 								itemprop="url" class="" href="product_introduce.do"
 								data-target="#">서비스소개</a></li>
 							<li itemprop="name" class="mega" data-id="152" data-level="1"><a
-								itemprop="url" class="" href="/game/game_thumb.html">게임</a></li>
+								itemprop="url" class="" href="product_list.do">게임</a></li>
 							<li class="dropdown mega" data-id="156"><a
 								class=" dropdown-toggle" href="/customer/notice.html"
 								data-target="#" data-toggle="dropdown">고객지원<em class="caret"></em></a>
@@ -220,8 +220,7 @@
 					<li class="item143"><a href="/mypage/mypage_qna.html" ><span>문의내역</span></a></li>
 					<li class="item144"><a href="/mypage/mypage_emoney.html" ><span>적립금</span></a></li>
 					<li class="item148"><a href="/mypage/mypage_cash.html" ><span>캐시</span></a></li>
-					<li class="item146"><a href="/mypage/member_leave.html" ><span>회원탈퇴</span></a></li>
-					<li class="item149"><a href="/order/v3/cart.html" ><span>장바구니</span></a></li>
+					<li class="item149"><a href="product_cartList.do" ><span>장바구니</span></a></li>
 				</ul>
 			</div>
 		</div>

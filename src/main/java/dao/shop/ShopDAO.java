@@ -1,5 +1,6 @@
 package dao.shop;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -86,5 +87,15 @@ public class ShopDAO {
 		List<ShopVO> search_list = null;
 		search_list = sqlSession.selectList("search_list", searchValue);
 		return search_list;
+	}
+	
+	public int history_insert(ShopVO svo) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("pro_name", svo.getPro_name());
+		System.out.println("dao"+svo.getPro_name());
+		map.put("pro_price", svo.getPro_price());
+		System.out.println("dao:"+svo.getPro_price());
+		int res = sqlSession.insert("history_insert", map);
+		return res;
 	}
 }
