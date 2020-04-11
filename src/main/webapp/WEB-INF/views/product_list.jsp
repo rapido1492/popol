@@ -134,7 +134,7 @@ div.product {
 					<!-- LOGO -->
 					<div class="col-sm-2 logo" style="padding-top: 0;">
 						<div class="logo-image" style="margin-top: 0">
-							<a href="/main/main.html" title="다이렉트 게임즈"> <img
+							<a href="product_list.do" title="다이렉트 게임즈"> <img
 								class="logo-img"
 								src="${pageContext.request.contextPath}/resources/images/common/dg_logo_new.png"
 								alt="다이렉트 게임즈"> <span>다이렉트 게임즈</span>
@@ -225,7 +225,7 @@ div.product {
 								</div>
 							</li>
 							<li itemprop="name" class="mega" data-id="301" data-level="1"><a
-								itemprop="url" href="/event/event.html">이벤트</a>
+								itemprop="url" href="#">이벤트</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right"
@@ -272,7 +272,7 @@ $(function(){
 						<div class="category-view">
 							<div class="gridlist-view">
 								<div class="gridlist">
-									<a href="game.html" id="list" class="btn btn-default"><i
+									<a href="#" id="list" class="btn btn-default"><i
 										class="fa fa-th-list"></i></a> <a href="game_thumb.html" id="grid"
 										class="btn btn-primary"><i class="fa fa-th icon-white"></i></a>
 								</div>

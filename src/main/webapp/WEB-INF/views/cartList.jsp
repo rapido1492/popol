@@ -99,7 +99,7 @@
 					<!-- LOGO -->
 					<div class="col-sm-2 logo" style="padding-top: 0;">
 						<div class="logo-image" style="margin-top: 0">
-							<a href="/main/main.html" title="다이렉트 게임즈"> <img
+							<a href="product_list.do" title="다이렉트 게임즈"> <img
 								class="logo-img" src="${pageContext.request.contextPath}/resources/images/common/dg_logo_new.png"
 								alt="다이렉트 게임즈"> <span>다이렉트 게임즈</span>
 							</a> <small class="site-slogan"></small>
@@ -111,7 +111,7 @@
 					<div class="col-sm-7 search" id="game_search"
 						style="padding-top: 0px;">
 						<form class="search_form" id="header-search" method="get"
-							action="/game/game_search.html">
+							action="product_search.do">
 							<div class="form-group">
 								<div class="input-group">
 									<input type="text" id="searchValue" name="searchValue"
@@ -217,8 +217,7 @@
 				<ul class="menu">
 					<li class="item141"><a href="/mypage/mypage_pwd.html" ><span>정보수정</span></a></li>
 					<li class="item142"><a href="/mypage/v2/mypage_order.html" ><span>주문내역</span></a></li>
-					<li class="item143"><a href="/mypage/mypage_qna.html" ><span>문의내역</span></a></li>
-					<li class="item144"><a href="/mypage/mypage_emoney.html" ><span>적립금</span></a></li>
+					<li class="item143"><a href="qna_list.do" ><span>문의내역</span></a></li>
 					<li class="item148"><a href="/mypage/mypage_cash.html" ><span>캐시</span></a></li>
 					<li class="item149"><a href="product_cartList.do" ><span>장바구니</span></a></li>
 				</ul>
